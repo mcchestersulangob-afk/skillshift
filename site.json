@@ -1,0 +1,10 @@
+{
+  "description": "Delivers personalized micro-learning and skill assessments for learners while enabling enterprises to manage upskilling, track progress, and boost engagement.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

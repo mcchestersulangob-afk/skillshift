@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-bg: #080A0F;
+  --color-surface: #0E1117;
+  --color-surface-2: #151B26;
+  --color-surface-3: #1C2538;
+  --color-border: #1E2D40;
+  --color-border-bright: #2A3F5C;
+  --color-primary: #6366F1;
+  --color-primary-dim: #4F46E5;
+  --color-cyan: #06B6D4;
+  --color-emerald: #10B981;
+  --color-amber: #F59E0B;
+  --color-rose: #F43F5E;
+  --color-violet: #8B5CF6;
+  --color-text: #E2E8F0;
+  --color-muted: #64748B;
+  --color-subtle: #334155;
+
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #080A0F;
+  color: #E2E8F0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #1E2D40 transparent;
+}
+
+body::-webkit-scrollbar { width: 6px; }
+body::-webkit-scrollbar-track { background: transparent; }
+body::-webkit-scrollbar-thumb { background: #1E2D40; border-radius: 3px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes streak-bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out both;
+}
+
+.glow-primary {
+  box-shadow: 0 0 24px -4px rgba(99, 102, 241, 0.4);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 24px -4px rgba(6, 182, 212, 0.3);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(30, 45, 64, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 45, 64, 0.4) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.skill-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: #1C2538;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1s ease-out;
+}
+
+.card {
+  background: #0E1117;
+  border: 1px solid #1E2D40;
+  border-radius: 10px;
+}
+
+.card-hover {
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.card-hover:hover {
+  border-color: #2A3F5C;
+  background: #111722;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.02em;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748B;
+  cursor: pointer;
+  transition: color 0.15s, background-color 0.15s;
+  text-decoration: none;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+
+.nav-item:hover {
+  color: #E2E8F0;
+  background: #151B26;
+}
+
+.nav-item.active {
+  color: #E2E8F0;
+  background: #1C2538;
+}
+
+.btn-primary {
+  background: #6366F1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.15s, transform 0.1s;
+}
+
+.btn-primary:hover {
+  background: #4F46E5;
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #64748B;
+  border: 1px solid #1E2D40;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-ghost:hover {
+  color: #E2E8F0;
+  border-color: #2A3F5C;
+  background: #151B26;
+}
+
+.xp-ring {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-number {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #64748B;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 1s ease-out;
+}
+
+.tag {
+  background: #1C2538;
+  border: 1px solid #2A3F5C;
+  color: #94A3B8;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
